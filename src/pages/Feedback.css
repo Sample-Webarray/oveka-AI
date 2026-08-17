@@ -1,0 +1,104 @@
+.feedback-page {
+  padding: var(--spacing-3xl) var(--spacing-md);
+  min-height: calc(100vh - 72px - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feedback-container {
+  max-width: 700px;
+  width: 100%;
+}
+
+.feedback-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.feedback-title {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.feedback-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+}
+
+.feedback-form-card {
+  background: var(--color-surface);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xl);
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.select-field {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b5068' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  padding-right: 2.5rem;
+}
+
+.form-actions {
+  margin-top: var(--spacing-md);
+}
+
+.feedback-success-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-3xl);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.success-icon {
+  color: var(--color-success);
+  margin-bottom: var(--spacing-lg);
+}
+
+.feedback-success-state h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+.feedback-success-state p {
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Utilities */
+.mb-4 { margin-bottom: 1rem; }
+.mt-4 { margin-top: 1rem; }
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .feedback-form-card {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+}

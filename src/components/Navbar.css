@@ -1,0 +1,124 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(219, 226, 239, 0.6);
+  box-shadow: 0 1px 3px rgba(17, 45, 78, 0.02);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.navbar-logo {
+  height: 52px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 40px;
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-primary);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.pill-btn {
+  border-radius: var(--radius-full);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+}
+
+.mobile-nav-menu {
+  display: none;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: var(--spacing-md) 0;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  border-bottom: 1px solid rgba(219, 226, 239, 0.4);
+}
+
+.mobile-nav-link:last-of-type {
+  border-bottom: none;
+}
+
+.mobile-nav-link:hover, .mobile-nav-link.active {
+  color: var(--color-primary);
+}
+
+.mobile-nav-footer {
+  padding: var(--spacing-md) 0 var(--spacing-lg) 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav, .desktop-actions {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-nav-menu {
+    display: block;
+  }
+}
