@@ -260,8 +260,10 @@ export async function downloadNotesPdf(markdown) {
   const safeTitle = sanitizeFilename(title);
   const filename  = `Notes by Oveka AI - ${safeTitle}.pdf`;
 
-  // 2. Logo — load from /public/LogoHColor.svg via Blob URL (no CORS issues)
-  const logoDataUrl = await svgToPngDataUrl('/LogoHColor.svg', 700, 243);
+  // 2. Logo — load from LogoHColor.svg via Blob URL (no CORS issues)
+  // Use import.meta.env.BASE_URL so it correctly resolves in GitHub Pages (base: './')
+  const logoPath = `${import.meta.env.BASE_URL}LogoHColor.svg`;
+  const logoDataUrl = await svgToPngDataUrl(logoPath, 700, 243);
 
   // 3. Build document definition
   const docDef = buildDocDefinition(markdown, logoDataUrl);
